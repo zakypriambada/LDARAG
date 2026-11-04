@@ -1,0 +1,44 @@
+[
+  {
+    "num_topics": 5,
+    "coherence_cv": 0.4841081072019208,
+    "seed": 42,
+    "passes": 5,
+    "iterations": 100
+  },
+  {
+    "num_topics": 10,
+    "coherence_cv": 0.5426718693729344,
+    "seed": 42,
+    "passes": 5,
+    "iterations": 100
+  },
+  {
+    "num_topics": 15,
+    "coherence_cv": 0.45451669140228707,
+    "seed": 42,
+    "passes": 5,
+    "iterations": 100
+  },
+  {
+    "num_topics": 20,
+    "coherence_cv": 0.5468404192696225,
+    "seed": 42,
+    "passes": 5,
+    "iterations": 100
+  },
+  {
+    "num_topics": 25,
+    "coherence_cv": 0.4862935858454446,
+    "seed": 42,
+    "passes": 5,
+    "iterations": 100
+  },
+  {
+    "num_topics": 30,
+    "coherence_cv": 0.4986542624690432,
+    "seed": 42,
+    "passes": 5,
+    "iterations": 100
+  }
+]

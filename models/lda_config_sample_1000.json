@@ -1,0 +1,18 @@
+{
+  "selected_num_topics_candidate": 20,
+  "coherence_cv": 0.5468404192696225,
+  "seed": 42,
+  "passes": 5,
+  "iterations": 100,
+  "no_below": 5,
+  "no_above": 0.5,
+  "dictionary_size": 4781,
+  "training_documents": 3985,
+  "preprocessing": [
+    "lowercase",
+    "remove_non_letters",
+    "remove_stopwords",
+    "Sastrawi_stemming"
+  ],
+  "selection_basis": "highest_coherence_cv_candidate"
+}

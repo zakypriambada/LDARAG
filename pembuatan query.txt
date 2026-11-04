@@ -1,0 +1,34 @@
+Saya sedang menyusun dataset evaluasi skripsi tentang semantic retrieval dan LDA reranking pada arsip berita berbahasa Indonesia.
+
+Berdasarkan lima artikel berikut, buat tepat 2 query untuk setiap artikel.
+
+Ketentuan:
+1. Gunakan bahasa Indonesia yang alami seperti pertanyaan pengguna sungguhan.
+2. Buat dua pertanyaan dengan fokus atau formulasi berbeda.
+3. Setiap pertanyaan harus dapat dijawab atau didukung oleh ringkasan artikel terkait.
+4. Jangan menambahkan fakta yang tidak tersedia dalam ringkasan.
+5. Hindari menyalin kalimat ringkasan secara langsung.
+6. Jangan menjawab pertanyaan.
+7. Pertahankan ID artikel sumber secara tepat.
+8. Jika ringkasan tidak cukup informatif, tandai artikel tersebut untuk pemeriksaan dan jangan memaksakan dua pertanyaan.
+
+Keluarkan hasil dalam format JSON yang valid:
+
+{
+  "queries": [
+    {
+      "source_article_id": "ID_ARTIKEL",
+      "query": "Pertanyaan pertama"
+    },
+    {
+      "source_article_id": "ID_ARTIKEL",
+      "query": "Pertanyaan kedua"
+    }
+  ]
+}
+
+Pastikan setiap query terhubung dengan ID artikel yang benar. Jangan menambahkan teks di luar JSON.
+
+Berikut lima artikel yang harus diproses:
+
+[TEMPEL ISI KELOMPOK DI SINI]
