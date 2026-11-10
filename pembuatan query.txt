@@ -12,20 +12,8 @@ Ketentuan:
 7. Pertahankan ID artikel sumber secara tepat.
 8. Jika ringkasan tidak cukup informatif, tandai artikel tersebut untuk pemeriksaan dan jangan memaksakan dua pertanyaan.
 
-Keluarkan hasil dalam format JSON yang valid:
-
-{
-  "queries": [
-    {
-      "source_article_id": "ID_ARTIKEL",
-      "query": "Pertanyaan pertama"
-    },
-    {
-      "source_article_id": "ID_ARTIKEL",
-      "query": "Pertanyaan kedua"
-    }
-  ]
-}
+"Keluarkan hasil dalam format JSONL (satu baris satu objek JSON valid, tanpa array pembungkus):
+{"source_article_id": "ID_ARTIKEL", "query": "Pertanyaan"}
 
 Pastikan setiap query terhubung dengan ID artikel yang benar. Jangan menambahkan teks di luar JSON.
 
