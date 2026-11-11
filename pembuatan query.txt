@@ -1,22 +1,22 @@
 Saya sedang menyusun dataset evaluasi skripsi tentang semantic retrieval dan LDA reranking pada arsip berita berbahasa Indonesia.
 
-Berdasarkan lima artikel berikut, buat tepat 2 query untuk setiap artikel.
+Berdasarkan lima ringkasan artikel berikut, buat tepat 2 pertanyaan pencarian untuk setiap artikel.
 
 Ketentuan:
-1. Gunakan bahasa Indonesia yang alami seperti pertanyaan pengguna sungguhan.
-2. Buat dua pertanyaan dengan fokus atau formulasi berbeda.
-3. Setiap pertanyaan harus dapat dijawab atau didukung oleh ringkasan artikel terkait.
-4. Jangan menambahkan fakta yang tidak tersedia dalam ringkasan.
-5. Hindari menyalin kalimat ringkasan secara langsung.
+1. Gunakan bahasa Indonesia yang alami seperti pertanyaan pengguna sungguhan, dalam bentuk kalimat tanya.
+2. Setiap pertanyaan harus dapat dipahami tanpa membaca artikel. Dilarang memakai kata penunjuk ("tersebut", "ini", "itu") atau penunjuk waktu relatif ("kemarin", "hari ini", "besok", "baru-baru ini", "akhir pekan ini", "pekan lalu", "mendatang"). Sebutkan tokoh, tempat, atau peristiwa secukupnya agar pertanyaan berdiri sendiri.
+3. Gunakan rumusan Anda sendiri. Jangan menyalin lebih dari tiga kata berturut-turut dari ringkasan, kecuali nama tokoh, tempat, atau istilah khusus. Gunakan sinonim atau susunan kalimat yang berbeda dari ringkasan jika memungkinkan.
+4. Buat dua pertanyaan dengan fokus atau sudut pandang berbeda.
+5. Setiap pertanyaan harus dapat dijawab oleh ringkasan terkait. Jangan menambahkan fakta atau nama yang tidak ada dalam ringkasan, dan jangan menggunakan pengetahuan di luar ringkasan.
 6. Jangan menjawab pertanyaan.
-7. Pertahankan ID artikel sumber secara tepat.
-8. Jika ringkasan tidak cukup informatif, tandai artikel tersebut untuk pemeriksaan dan jangan memaksakan dua pertanyaan.
+7. Salin ID artikel sumber persis seperti yang diberikan.
+8. Jika ringkasan tidak cukup informatif, jangan memaksakan dua pertanyaan. Keluarkan satu baris: {"source_article_id": "ID_ARTIKEL", "query": null, "catatan": "ringkasan kurang informatif"}
 
-"Keluarkan hasil dalam format JSONL (satu baris satu objek JSON valid, tanpa array pembungkus):
+Format keluaran: JSONL, satu baris satu objek JSON yang valid tanpa array pembungkus, dalam satu blok kode:
 {"source_article_id": "ID_ARTIKEL", "query": "Pertanyaan"}
 
-Pastikan setiap query terhubung dengan ID artikel yang benar. Jangan menambahkan teks di luar JSON.
+Jangan menambahkan teks di luar blok kode.
 
-Berikut lima artikel yang harus diproses:
+Berikut lima ringkasan artikel yang harus diproses:
 
 [TEMPEL ISI KELOMPOK DI SINI]
