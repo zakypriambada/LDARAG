@@ -10,6 +10,8 @@ import nltk
 import re
 from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
 
+from penanda_portal import hapus_penanda_portal
+
 
 ROOT = Path(__file__).resolve().parent
 
@@ -43,7 +45,8 @@ stemmer = StemmerFactory().create_stemmer()
 
 
 def preprocess_text(text):
-    text = str(text).lower()
+    text = hapus_penanda_portal(str(text))
+    text = text.lower()
     text = re.sub(r"[^a-zA-Z\s]", " ", text)
     text = re.sub(r"\s+", " ", text).strip()
     tokens = text.split()

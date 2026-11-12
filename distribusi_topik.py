@@ -9,6 +9,8 @@ from gensim.models import LdaModel
 from gensim.corpora import Dictionary
 from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
 
+from penanda_portal import hapus_penanda_portal
+
 ROOT = Path.cwd()
 CHUNKS_PATH = ROOT / "data/processed/chunks_sample_1000.jsonl"
 MODEL_PATH = ROOT / "models/lda_model_sample_1000.model"
@@ -32,7 +34,8 @@ stop_words.update({
 stemmer = StemmerFactory().create_stemmer()
 
 def preprocess_text(text):
-    text = str(text).lower()
+    text = hapus_penanda_portal(str(text))
+    text = text.lower()
     text = re.sub(r"[^a-zA-Z\s]", " ", text)
     text = re.sub(r"\s+", " ", text).strip()
     tokens = text.split()

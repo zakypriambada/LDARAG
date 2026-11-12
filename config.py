@@ -8,13 +8,14 @@ BASE_DIR = Path(__file__).resolve().parent
 
 # "sample_1000" (pilot) atau "sample_10000" (eksperimen final)
 SAMPLE_NAME = "sample_10000"
+CHUNK_TAG = "_c80" if SAMPLE_NAME == "sample_10000" else ""
 
 DATA_DIR = BASE_DIR / "data" / "processed"
 MODEL_DIR = BASE_DIR / "models"
 
 # Data
 ARTICLES_PATH = DATA_DIR / f"articles_{SAMPLE_NAME}.jsonl"
-CHUNKS_PATH = DATA_DIR / f"chunks_{SAMPLE_NAME}.jsonl"
+CHUNKS_PATH = DATA_DIR / f"chunks_{SAMPLE_NAME}{CHUNK_TAG}.jsonl"
 
 # Embedding
 EMBEDDINGS_PATH = MODEL_DIR / f"chunk_embeddings_{SAMPLE_NAME}.npy"

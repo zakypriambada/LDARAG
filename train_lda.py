@@ -13,6 +13,7 @@ from nltk.corpus import stopwords
 from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
 
 import config as cfg
+from penanda_portal import hapus_penanda_portal
 
 
 # =========================================================
@@ -36,7 +37,7 @@ SELECTED_K_OVERRIDE = None
 
 # Naikkan nilai ini jika logika preprocessing diubah, agar cache
 # token dan model lama tidak dipakai ulang.
-PREPROCESS_VERSION = "v1-lower-letters-stopwords-sastrawi"
+PREPROCESS_VERSION = "v2-portal-regex-lower-letters-stopwords-sastrawi"
 
 EXTRA_STOPWORDS = {
     "cnn", "indonesia", "jakarta", "sumber",
@@ -105,7 +106,8 @@ def load_indonesian_stopwords():
 
 
 def preprocess_text(text, stop_words, stemmer):
-    text = str(text).lower()
+    text = hapus_penanda_portal(str(text))
+    text = text.lower()
     text = re.sub(r"[^a-zA-Z\s]", " ", text)
     text = re.sub(r"\s+", " ", text).strip()
 
@@ -452,6 +454,7 @@ def main():
             "dictionary_size": len(dictionary),
             "training_documents": len(bow_corpus),
             "preprocessing": [
+                "portal_marker_removal",
                 "lowercase",
                 "remove_non_letters",
                 "remove_stopwords",
