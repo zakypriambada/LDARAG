@@ -1,0 +1,84 @@
+{
+  "efdefault": {
+    "variant": "efdefault",
+    "label": "ChromaDB (ef_default)",
+    "total_queries": 60,
+    "mean_top20_chunk_overlap": 0.9991666666666668,
+    "min_top20_chunk_overlap": 0.95,
+    "max_top20_chunk_overlap": 1.0,
+    "identical_order_queries_count": 59,
+    "identical_order_queries_percentage": 98.33333333333333,
+    "max_score_difference_matching_chunks": 4.76837158203125e-07,
+    "mean_score_difference_matching_chunks": 1.0596105115825281e-07,
+    "rank_difference_queries_count": 0,
+    "rank_difference_queries": [],
+    "metrics_comparison": {
+      "Hit@1": {
+        "numpy": 0.8833333333333333,
+        "chroma": 0.8833333333333333,
+        "diff": 0.0
+      },
+      "Hit@3": {
+        "numpy": 0.95,
+        "chroma": 0.95,
+        "diff": 0.0
+      },
+      "Hit@5": {
+        "numpy": 0.9833333333333333,
+        "chroma": 0.9833333333333333,
+        "diff": 0.0
+      },
+      "Hit@20": {
+        "numpy": 1.0,
+        "chroma": 1.0,
+        "diff": 0.0
+      },
+      "MRR": {
+        "numpy": 0.9258333333333334,
+        "chroma": 0.9258333333333334,
+        "diff": 0.0
+      }
+    }
+  },
+  "ef100": {
+    "variant": "ef100",
+    "label": "ChromaDB (ef_search=100)",
+    "total_queries": 60,
+    "mean_top20_chunk_overlap": 0.9991666666666668,
+    "min_top20_chunk_overlap": 0.95,
+    "max_top20_chunk_overlap": 1.0,
+    "identical_order_queries_count": 59,
+    "identical_order_queries_percentage": 98.33333333333333,
+    "max_score_difference_matching_chunks": 4.76837158203125e-07,
+    "mean_score_difference_matching_chunks": 1.0596105115825281e-07,
+    "rank_difference_queries_count": 0,
+    "rank_difference_queries": [],
+    "metrics_comparison": {
+      "Hit@1": {
+        "numpy": 0.8833333333333333,
+        "chroma": 0.8833333333333333,
+        "diff": 0.0
+      },
+      "Hit@3": {
+        "numpy": 0.95,
+        "chroma": 0.95,
+        "diff": 0.0
+      },
+      "Hit@5": {
+        "numpy": 0.9833333333333333,
+        "chroma": 0.9833333333333333,
+        "diff": 0.0
+      },
+      "Hit@20": {
+        "numpy": 1.0,
+        "chroma": 1.0,
+        "diff": 0.0
+      },
+      "MRR": {
+        "numpy": 0.9258333333333334,
+        "chroma": 0.9258333333333334,
+        "diff": 0.0
+      }
+    }
+  }
+}

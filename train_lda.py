@@ -347,9 +347,14 @@ def main():
                 f"hanya menghitung C_v..."
             )
             model = LdaModel.load(str(model_path))
+            try:
+                meta = load_json(meta_path)
+                train_seconds = meta.get("train_seconds")
+            except Exception:
+                train_seconds = None
         else:
             print(f"\nMelatih LDA dengan {num_topics} topik...")
-            started = time.time()
+            started_train = time.time()
 
             # Hapus penanda lama sebelum menulis model baru, agar
             # model setengah tertulis tidak dianggap valid.
@@ -370,6 +375,8 @@ def main():
                 per_word_topics=False,
             )
 
+            train_seconds = round(time.time() - started_train, 2)
+
             # Simpan model SEBELUM menghitung C_v; penanda ditulis
             # terakhir sebagai tanda model lengkap.
             model.save(str(model_path))
@@ -378,12 +385,13 @@ def main():
                     "run_id": run_id,
                     "num_topics": num_topics,
                     "fingerprint": fingerprint,
+                    "train_seconds": train_seconds,
                 },
                 meta_path,
             )
-            print(f"Pelatihan selesai ({time.time() - started:.0f} detik).")
+            print(f"Pelatihan selesai ({train_seconds:.1f} detik).")
 
-        started = time.time()
+        started_coherence = time.time()
         coherence_model = CoherenceModel(
             model=model,
             texts=tokenized_texts,
@@ -392,6 +400,7 @@ def main():
             processes=1,
         )
         coherence = float(coherence_model.get_coherence())
+        coherence_seconds = round(time.time() - started_coherence, 2)
 
         if not np.isfinite(coherence):
             raise ValueError(
@@ -401,6 +410,8 @@ def main():
         results.append({
             "num_topics": num_topics,
             "coherence_cv": coherence,
+            "train_seconds": train_seconds,
+            "coherence_seconds": coherence_seconds,
             "seed": SEED,
             "passes": PASSES,
             "iterations": ITERATIONS,
@@ -411,7 +422,7 @@ def main():
 
         print(
             f"Coherence C_v: {coherence:.4f} "
-            f"({time.time() - started:.0f} detik)"
+            f"({coherence_seconds:.1f} detik)"
         )
         print(f"Hasil K={num_topics} tersimpan.")
 
@@ -444,6 +455,8 @@ def main():
         {
             "selected_num_topics_candidate": best_k,
             "coherence_cv": best_score,
+            "train_seconds": best_result.get("train_seconds"),
+            "coherence_seconds": best_result.get("coherence_seconds"),
             "seed": SEED,
             "passes": PASSES,
             "iterations": ITERATIONS,

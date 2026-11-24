@@ -1,0 +1,17 @@
+{
+  "Hit@1": 0.8833333333333333,
+  "Hit@3": 0.95,
+  "Hit@5": 0.9833333333333333,
+  "Hit@20": 1.0,
+  "MRR": 0.9258333333333334,
+  "Recall@20": 1.0,
+  "total_queries": 60,
+  "successful_queries_top20": 60,
+  "variant": "ef100",
+  "ef_search": 100,
+  "latency_mean_ms": 1.39795833330633,
+  "latency_std_ms": 0.23145798493243633,
+  "latency_median_ms": 1.3576499995906488,
+  "latency_min_ms": 1.0511999998925603,
+  "latency_max_ms": 2.6426000003993977
+}
